@@ -16,6 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $stmt->execute();
         $resultado = $stmt->get_result();
         $usuario   = $resultado->fetch_assoc();
+        
 
         if ($usuario && password_verify($password, $usuario['password'])) {
             $_SESSION['id'] = $usuario['id'];
@@ -37,28 +38,35 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 <body>
 
+    <div class="card">
     <h2>Iniciar sesión</h2>
+    <p class="subtitle">Inicia sesion para continuar</p>
 
     <?php if ($error): ?>
         <p style="color:red;"><?= $error ?></p>
     <?php endif; ?>
 
     <form method="POST" action="">
-
+        <div class="form-group">
         <label>Correo</label>
         <input type="email" name="correo" required>
-
+        </div>
+        <div class="form-group">
         <label>Contraseña</label>
         <input type="password" name="password" required>
+        </div>
 
         <button type="submit">Iniciar sesión</button>
 
     </form>
 
-    <a href="registro.php">¿No tienes cuenta? Regístrate</a>
-
+    <div class="links">
+        <a href="registro.php">¿No tienes cuenta? Regístrate</a>
+    </div>
+    </div>
 </body>
-</html>
+</html> 

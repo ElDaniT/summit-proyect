@@ -66,41 +66,50 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mi Perfil</title>
-</head>
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head> 
 <body>
 
+    <div class="card">
     <h2>Mi Perfil</h2>
-    <p>Bienvenido, <?= $usuario['nombre'] ?></p>
+    <p class="subtitle">Bienvenido, <?= $usuario['nombre'] ?></p>
 
     <?php if ($error): ?>
-        <p style="color:red;"><?= $error ?></p>
+        <div class="mensaje-error"><?= $error ?></div>
     <?php endif; ?>
 
     <?php if ($exito): ?>
-        <p style="color:green;"><?= $exito ?></p>
+        <div class="mensaje-exito"><?= $exito ?></div>
     <?php endif; ?>
 
-    <form method="POST" action="">
 
+        <div class="form-group">
         <label>Nombre</label>
         <input type="text" name="nombre" value="<?= $usuario['nombre'] ?>" required>
-
+        </div>
+        <div class="form-group">
         <label>Correo</label>
         <input type="email" name="correo" value="<?= $usuario['correo'] ?>" required>
-
+        </div>
+    <form method="POST" action="">
+        <div class="form-group">
         <label>Teléfono</label>
         <input type="text" name="telefono" value="<?= $usuario['telefono'] ?>">
-
+        </div>
+        <div class="form-group">
         <label>Fecha de nacimiento</label>
         <input type="date" name="fecha_nacimiento" value="<?= $usuario['fecha_nacimiento'] ?>">
+        </div>
 
         <button type="submit">Actualizar perfil</button>
 
     </form>
 
-    <br>
-    <a href="cambiar_password.php">Cambiar contraseña</a> | 
+    <div class="links">
+    <a href="cambiar_password.php">Cambiar contraseña</a> <span>|</span> 
     <a href="../auth/logout.php">Cerrar sesión</a>
+    </div>
+    </div>
 
 </body>
 </html>

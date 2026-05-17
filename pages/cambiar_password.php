@@ -58,37 +58,44 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cambiar Contraseña</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 <body>
 
+    <div class="card">
     <h2>Cambiar Contraseña</h2>
 
     <?php if ($error): ?>
-        <p style="color:red;"><?= $error ?></p>
+        <div class="mensaje-error"><?= $error ?></div>
     <?php endif; ?>
 
     <?php if ($exito): ?>
-        <p style="color:green;"><?= $exito ?></p>
+        <div class="mensaje-exito"><?= $exito ?></div>
     <?php endif; ?>
 
     <form method="POST" action="">
-
+          <div class="form-group">
         <label>Contraseña actual</label>
         <input type="password" name="password_actual" required>
-
+        </div>
+        <div class="form-group">
         <label>Nueva contraseña</label>
         <input type="password" name="password_nueva" required>
-
+        </div>
+        <div class="form-group">
         <label>Confirmar nueva contraseña</label>
         <input type="password" name="password_confirm" required>
+        </div>
 
         <button type="submit">Cambiar contraseña</button>
 
     </form>
 
-    <br>
-    <a href="perfil.php">Volver al perfil</a> |
+    <div class="links">
+    <a href="perfil.php">Volver al perfil</a> <span>|</span>
     <a href="../auth/logout.php">Cerrar sesión</a>
+    </div>
+    </div>
 
 </body>
 </html>

@@ -57,10 +57,13 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 <body>
 
+    <div class="card">
     <h2>Crear cuenta</h2>
+    <p class="subtitle">Bienvenido de nuevo</p>
 
     <?php if ($error): ?>
         <p style="color:red;"><?= $error ?></p>
@@ -69,32 +72,40 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
     <?php if ($exito): ?>
         <p style="color:green;"><?= $exito ?></p>
     <?php endif; ?>
-
+                                                                                                  
     <form method="POST" action="">
-
+        <div class="form-group">
         <label>Cédula</label>
-        <input type="text" name="cedula" required>
-
+        <input type=    "text" name="cedula" required>
+        </div>
+        <div class="form-group">
         <label>Nombre</label>
         <input type="text" name="nombre" required>
-
+        </div>
+        <div class="form-group">
         <label>Correo</label>
         <input type="email" name="correo" required>
-
+        </div>  
+        <div class="form-group">
         <label>Contraseña</label>
         <input type="password" name="password" required>
-
+        </div>
+        <div class="form-group">
         <label>Teléfono</label>
         <input type="text" name="telefono">
-
+        </div>
+        <div class="form-group">
         <label>Fecha de nacimiento</label>
         <input type="date" name="fecha_nacimiento">
+        </div>
 
         <button type="submit">Registrarse</button>
 
     </form>
-
-    <a href="login.php">¿Ya tienes cuenta? Inicia sesión</a>
+    <div class="links">
+        <a href="login.php">¿Ya tienes cuenta? Inicia sesión</a>
+    </div>
+    </div>
 
 </body>
 </html>
