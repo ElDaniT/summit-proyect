@@ -71,6 +71,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <body>
 
     <div class="card">
+    <h1 class="app-title">Ecuador Summit</h1>
     <h2>Mi Perfil</h2>
     <p class="subtitle">Bienvenido, <?= $usuario['nombre'] ?></p>
 
@@ -82,7 +83,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <div class="mensaje-exito"><?= $exito ?></div>
     <?php endif; ?>
 
-
+    <form method="POST" action="">
         <div class="form-group">
         <label>Nombre</label>
         <input type="text" name="nombre" value="<?= $usuario['nombre'] ?>" required>
@@ -91,7 +92,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <label>Correo</label>
         <input type="email" name="correo" value="<?= $usuario['correo'] ?>" required>
         </div>
-    <form method="POST" action="">
         <div class="form-group">
         <label>Teléfono</label>
         <input type="text" name="telefono" value="<?= $usuario['telefono'] ?>">

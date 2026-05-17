@@ -43,6 +43,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <body>
 
     <div class="card">
+    <h1 class="app-title">Ecuador Summit</h1>
     <h2>Iniciar sesión</h2>
     <p class="subtitle">Inicia sesion para continuar</p>
 

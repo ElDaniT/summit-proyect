@@ -62,21 +62,22 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 <body>
 
     <div class="card">
+    <h1 class="app-title">Ecuador Summit</h1>
     <h2>Crear cuenta</h2>
-    <p class="subtitle">Bienvenido de nuevo</p>
+    <p class="subtitle">Únete a la comunidad montañista</p>
 
     <?php if ($error): ?>
-        <p style="color:red;"><?= $error ?></p>
+        <div class="mensaje-error"><?= $error ?></div>
     <?php endif; ?>
 
     <?php if ($exito): ?>
-        <p style="color:green;"><?= $exito ?></p>
+        <div class="mensaje-exito"><?= $exito ?></div>
     <?php endif; ?>
                                                                                                   
     <form method="POST" action="">
         <div class="form-group">
         <label>Cédula</label>
-        <input type=    "text" name="cedula" required>
+        <input type="text" name="cedula" required>
         </div>
         <div class="form-group">
         <label>Nombre</label>

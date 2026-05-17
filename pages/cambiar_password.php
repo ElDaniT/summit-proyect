@@ -63,6 +63,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <body>
 
     <div class="card">
+    <h1 class="app-title">Ecuador Summit</h1>
     <h2>Cambiar Contraseña</h2>
 
     <?php if ($error): ?>
